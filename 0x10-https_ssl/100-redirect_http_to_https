@@ -35,10 +35,18 @@ defaults
 
 frontend haproxy-main
         bind *:80
+        http-request set-header X-Forwarded-Proto http
         mode http
-        default_backend nginx_webservers
+        default_backend webservers
 
-backend nginx_webservers
+frontend haproxy-main-https
+        bind *:443 ssl crt /etc/ssl/www.atfogconsults.tech/www.atfogconsults.tech.pem
+        redirect scheme https code 301 if !{ ssl_fc }
+        http-request set-header X-Forwarded-Proto https
+        default_backend webservers
+
+backend webservers
+        http-request redirect scheme https code 301 if !{ ssl_fc }
         balance roundrobin
         server web-01 100.25.169.42:80 check
         server web-02 54.157.182.46:80 check
