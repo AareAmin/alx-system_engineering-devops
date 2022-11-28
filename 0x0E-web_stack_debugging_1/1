@@ -1,0 +1,10 @@
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Ign:5 http://ppa.launchpad.net/certbot/certbot/ubuntu focal InRelease
+Hit:6 https://deb.nodesource.com/node_14.x focal InRelease
+Err:7 http://ppa.launchpad.net/certbot/certbot/ubuntu focal Release
+  404  Not Found [IP: 185.125.190.52 80]
+Get:8 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Reading package lists...
